@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network and Transport Layers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #0073e6;
+        }
+        code {
+            background-color: #eef;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Network and Transport Layers</h1>
+    </header>
+    <main>
+        <section id="theoretical">
+            <h2>Theoretical Part</h2>
+            <ul>
+                <li><strong>TCP Protocol:</strong> Description of its functionality and features.</li>
+                <li><strong>UDP Protocol:</strong> Overview and comparison with TCP.</li>
+                <li><strong>TCP Parameters:</strong> Sequence numbers, acknowledgments, etc.</li>
+                <li><strong>UDP Parameters:</strong> Packet size, checksum, etc.</li>
+                <li><strong>TCP Connection:</strong> Three-way handshake, connection establishment, and release.</li>
+                <li><strong>Ports:</strong> Explanation of local and remote ports.</li>
+            </ul>
+        </section>
+        <section id="practical">
+            <h2>Practical Part</h2>
+            <ol>
+                <li>
+                    <strong>Accessing Google:</strong>
+                    Use <code>netstat</code> and Wireshark to identify ports for <code>www.google.com</code>.
+                </li>
+                <li>
+                    <strong>File Transfer with FTP:</strong>
+                    Transfer a file and analyze ports using <code>netstat</code> and Wireshark.
+                </li>
+                <li>
+                    <strong>File Transfer with SFTP/SCP:</strong>
+                    Transfer a file and analyze protocol and port usage.
+                </li>
+                <li>
+                    <strong>DNS Protocol:</strong>
+                    Use Wireshark to identify the transport protocol and port used by DNS.
+                </li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
