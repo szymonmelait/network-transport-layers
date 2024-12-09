@@ -8,17 +8,60 @@
 <body>
     <header>
         <h1>Network and Transport Layers</h1>
+        <p>Understanding the functionality of network and transport layer protocols.</p>
     </header>
     <main>
         <section id="theoretical">
             <h2>Theoretical Part</h2>
             <ul>
-                <li><strong>TCP Protocol:</strong> Description of its functionality and features.</li>
-                <li><strong>UDP Protocol:</strong> Overview and comparison with TCP.</li>
-                <li><strong>TCP Parameters:</strong> Sequence numbers, acknowledgments, etc.</li>
-                <li><strong>UDP Parameters:</strong> Packet size, checksum, etc.</li>
-                <li><strong>TCP Connection:</strong> Three-way handshake, connection establishment, and release.</li>
-                <li><strong>Ports:</strong> Explanation of local and remote ports.</li>
+                <li>
+                    <strong>TCP Protocol:</strong>
+                    TCP (Transmission Control Protocol) is a reliable, connection-oriented protocol that ensures ordered and error-checked delivery of data. It is widely used for applications requiring data integrity, such as web browsing (HTTP/HTTPS), email (SMTP/IMAP), and file transfers (FTP).
+                </li>
+                <li>
+                    <strong>UDP Protocol:</strong>
+                    UDP (User Datagram Protocol) is a connectionless, lightweight protocol used for applications where speed is prioritized over reliability, such as video streaming, VoIP, and gaming. Unlike TCP, it does not provide error correction or data sequencing.
+                </li>
+                <li>
+                    <strong>TCP Parameters:</strong>
+                    TCP includes several critical parameters:
+                    <ul>
+                        <li><strong>Sequence Number:</strong> Identifies the order of data packets.</li>
+                        <li><strong>Acknowledgment Number:</strong> Confirms receipt of data packets.</li>
+                        <li><strong>Window Size:</strong> Specifies the amount of data that can be sent without acknowledgment.</li>
+                        <li><strong>Checksum:</strong> Ensures data integrity during transmission.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>UDP Parameters:</strong>
+                    UDP has minimal parameters:
+                    <ul>
+                        <li><strong>Source Port:</strong> Identifies the sender's port.</li>
+                        <li><strong>Destination Port:</strong> Identifies the receiver's port.</li>
+                        <li><strong>Length:</strong> Specifies the total packet size.</li>
+                        <li><strong>Checksum:</strong> Provides basic error detection.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>TCP Connection:</strong>
+                    TCP uses a three-way handshake for connection establishment:
+                    <ul>
+                        <li><strong>SYN:</strong> The client sends a SYN (synchronize) packet to initiate a connection.</li>
+                        <li><strong>SYN-ACK:</strong> The server responds with a SYN-ACK (synchronize-acknowledge) packet.</li>
+                        <li><strong>ACK:</strong> The client sends an ACK (acknowledge) packet, completing the handshake.</li>
+                    </ul>
+                    Connection release occurs with a four-step process (FIN/ACK packets) to ensure all data is transmitted and acknowledged.
+                </li>
+                <li>
+                    <strong>Ports:</strong>
+                    Ports are logical endpoints used to differentiate between multiple communication streams on a single device. Common examples include:
+                    <ul>
+                        <li><strong>Port 80:</strong> HTTP traffic.</li>
+                        <li><strong>Port 443:</strong> HTTPS traffic.</li>
+                        <li><strong>Port 21:</strong> FTP control commands.</li>
+                        <li><strong>Port 53:</strong> DNS queries.</li>
+                    </ul>
+                </li>
             </ul>
         </section>
         <section id="practical">
@@ -26,22 +69,51 @@
             <ol>
                 <li>
                     <strong>Accessing Google:</strong>
-                    Use <code>netstat</code> and Wireshark to identify ports for <code>www.google.com</code>.
+                    Use <code>netstat</code> and Wireshark to identify the local and remote ports used for communication with <code>www.google.com</code>.
+                    <div class="image">
+                        <img src="210.png" width="800">
+                    </div>
+                    <ul>
+                        <li>Record of the observed port numbers and their states.</li>
+                            <div class="image">
+                                <img src="211.png" width="800">
+                            </div>
+                            <div class="image">
+                                <img src="212.png" width="800">
+                            </div>
+                            <div class="image">
+                                <img src="213.png" width="800">
+                            </div>
+                    </ul>
                 </li>
                 <li>
                     <strong>File Transfer with FTP:</strong>
-                    Transfer a file and analyze ports using <code>netstat</code> and Wireshark.
+                    Transfer a file to the <code>studife.it.p.lodz.pl</code> server using FTP.
+                    <ul>
+                        <li>Analyze the traffic using <code>netstat</code> and Wireshark to identify active ports (e.g., 21 for FTP commands, 20 for data).</li>
+                        <li>Document your observations with screenshots and details.</li>
+                    </ul>
                 </li>
                 <li>
                     <strong>File Transfer with SFTP/SCP:</strong>
-                    Transfer a file and analyze protocol and port usage.
+                    Transfer a file using SFTP or SCP to the server.
+                    <ul>
+                        <li>Identify the protocol and port used (e.g., TCP port 22 for SFTP).</li>
+                        <li>Summarize findings with evidence from tools.</li>
+                    </ul>
                 </li>
                 <li>
                     <strong>DNS Protocol:</strong>
-                    Use Wireshark to identify the transport protocol and port used by DNS.
+                    Use Wireshark to monitor DNS queries and determine the transport protocol (usually UDP) and port (53) used.
+                    <ul>
+                        <li>Provide an analysis of the captured traffic.</li>
+                    </ul>
                 </li>
             </ol>
         </section>
     </main>
+    <footer>
+        <p>Created by [Your Name] | Network and Transport Layers</p>
+    </footer>
 </body>
 </html>
