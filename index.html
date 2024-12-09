@@ -121,10 +121,10 @@
                 </li>
                 <li>
                     <strong>DNS Protocol:</strong>
-                    Use Wireshark to monitor DNS queries and determine the transport protocol (usually UDP) and port (53) used.
-                    <ul>
-                        <li>Provide an analysis of the captured traffic.</li>
-                    </ul>
+                    In DNS, UDP is the primary protocol used for queries because it is faster and more efficient for small responses, typically under 512 bytes. However, when a DNS response exceeds this size, such as when DNSSEC is involved or during large zone transfers, the response is truncated in UDP, and the client automatically switches to TCP for the query. TCP is used in these cases because it can handle larger responses and ensures reliable, error-free delivery of data. TCP is also necessary for DNS zone transfers between servers, as these can involve large amounts of data.               
+                    <div class="image">
+                        <img src="240.png" width="800">
+                    </div>
                 </li>
             </ol>
         </section>
